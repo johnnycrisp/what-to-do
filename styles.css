@@ -1,0 +1,184 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  background-color: #120439;
+  height: 100%;
+  color: rgb(194, 192, 192);
+  font-family: 'tradegothiclt-bold', sans-serif;
+}
+
+/* h1 styles */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.caret {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+/* 
+input */
+
+label {
+    font-size: 18px;
+}
+
+#input {
+    padding-top: 10px;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-label {
+color: rgb(194, 192, 192);
+}
+
+#input-field {
+margin: 15px auto;
+height: 44px; 
+width: 50%;
+max-width: 468px;
+min-width: 210px;
+font-family: 'tradegothiclt-bold', sans-serif;
+padding-left: 8px;
+
+
+}
+
+#input-field:focus {
+   outline: none;
+
+}
+
+#input-field:focus::placeholder {
+    opacity: 0;
+}
+
+
+/* background noise section */
+
+#background-noise {
+    padding-top: 10px;
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+    min-width: 590px;
+}
+
+#background-noise .card {
+    background-color: #120439;
+    cursor: pointer;
+}
+
+.card p, .card h3 {
+color: rgb(194, 192, 192);
+font-size: medium;
+
+}
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+/* //Arrow styles // */
+
+
+.center-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.round {
+    position: relative;
+    border: 1.5px solid rgb(194, 192, 192);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-top: 50px;
+}
+
+.arrow-span {
+    z-index: 999;
+    height: 1.5px;
+    margin:1px;
+    width: 13px;
+    background: rgb(194, 192, 192);
+    transition: 0.4s ease;
+}
+
+.arrow-span:first-child {
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 25%;
+    bottom: 35%;
+}
+
+.arrow-span:nth-child(2) {
+    display: block;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 45%;
+    bottom: 35%;
+}
+
+.arrow-span:nth-child(3) {
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 25%;
+    bottom: 54%;
+}
+
+.arrow-span:nth-child(4) {
+    display: block;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 45%;
+    bottom: 54%;
+}
+
+.round:hover span:nth-child(1) {
+    transform: rotate(-135deg);
+}
+
+.round:hover span:nth-child(2) {
+    transform: rotate(135deg);
+}
+
+.round:hover span:nth-child(3) {
+    transform: rotate(225deg);
+}
+
+.round:hover span:nth-child(4) {
+    transform: rotate(-225deg);
+}
