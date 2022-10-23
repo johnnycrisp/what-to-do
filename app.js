@@ -2,8 +2,7 @@ const arrowOne = document.querySelector('.round');
 const arrowTwo = document.querySelector('.round-two');
 const input = document.querySelector('#input-field');
 const backgroundNoise = document.querySelector('#background-noise');
-const album = document.querySelector('#background-noise .card');
-
+const albums = document.querySelectorAll('#background-noise .card');
 arrowOne.addEventListener('click', ()=> {
     input.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 })
@@ -14,7 +13,13 @@ arrowTwo.addEventListener('click', ()=> {
 
 
 backgroundNoise.addEventListener('click', (e)=>{
+
+    if(e.target.parentNode.classList.contains('card')){
+    for(let i = 0; i < albums.length; i++){
+        albums[i].classList.remove('selected');
+    }
     e.target.parentNode.classList.add('selected');
+    } 
 })
 
 // text animation
