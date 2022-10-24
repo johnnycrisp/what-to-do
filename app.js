@@ -1,14 +1,29 @@
 const arrowOne = document.querySelector('.round');
 const arrowTwo = document.querySelector('.round-two');
+const arrowThree = document.querySelector('.round-three');
 const input = document.querySelector('#input-field');
 const backgroundNoise = document.querySelector('#background-noise');
 const albums = document.querySelectorAll('#background-noise .card');
+const timer = document.querySelector('#set-timer');
+const submit = document.querySelector('.submit');
+const workZone = document.querySelector('#work-zone');
+
+//arrows
+
 arrowOne.addEventListener('click', ()=> {
     input.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 })
 
 arrowTwo.addEventListener('click', ()=> {
     backgroundNoise.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+})
+
+arrowThree.addEventListener('click', ()=> {
+    timer.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+})
+
+submit.addEventListener('click', ()=> {
+    workZone.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 })
 
 
@@ -26,7 +41,7 @@ backgroundNoise.addEventListener('click', (e)=>{
 
 document.addEventListener('DOMContentLoaded',function(event){
   // array with texts to type in typewriter
-  var dataText = [ "hi.", "want to do a thing?", "hit the arrow"];
+  var dataText = ["want to do a thing?", "hit the arrow"];
   
   // type one text in the typwriter
   // keeps calling itself until the text is finished
@@ -66,3 +81,39 @@ document.addEventListener('DOMContentLoaded',function(event){
   // start the text animation
   StartTextAnimation(0);
 });
+
+// countdown animation
+
+function addMinutes(date, minutes) {
+    return new Date(date.getTime() + minutes*60000);
+}
+
+let today = new Date();
+let now = new Date().getTime();
+let countDownDate = addMinutes(today, 15);
+// Update the count down every 1 second
+let x = setInterval(function() {
+
+  // Get today's date and time
+  let now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  let distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);

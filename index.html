@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>what to do, with white noise</title>
+    <title>what to do.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="pt-5">
+<body class="pt-5 container">
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">what to do, with white noise</a>
+            <a class="navbar-brand" href="#">what to do.</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">Dashboard</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -48,10 +48,10 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex mt-3" role="search">
+                    <!-- <form class="d-flex mt-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-secondary" type="submit">Search</button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
@@ -71,7 +71,11 @@
     </div>
     <div class="container mt-5" id="input">
         <label id="input-label" for="input-field">What would you like to do?</label>
-        <input type="text" class="" placeholder="" id="input-field">
+        <div id="input-field" class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Type what you would like to do..." aria-label="user task name"
+                aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+        </div>
         <div class="round round-two">
             <span class="arrow-span"></span>
             <span class="arrow-span"></span>
@@ -80,40 +84,64 @@
         </div>
     </div>
     <div class="container mt-5" id="background-noise">
+        
         <div class="row">
             <h2 class="mb-3">CHOOSE A BACKING TRACK</h2>
             <div class="col-sm-4 card selected">
-                <img class="card-img-top my-3" src="img/h-budd-luxa.jpeg" alt="img alt">
+                <img class=" my-3" src="img/h-budd-luxa.jpeg" alt="img alt">
                 <h3 class="card-title text-center">Harold Budd</h3>
                 <p class="text-center">Luxa</p>
             </div>
             <div class="col-sm-4 card">
-                <img class="card-img-top my-3" src="img/elori-saxl-tbod.webp" alt="img alt">
-                <h3 class="card-title text-center">Elori Saxl</h3>
-                <p class="text-center">The Blue of Distance</p>
-            </div>
-            <div class="col-sm-4 card">
-                <img class="card-img-top my-3" src="img/s-and-g.jpeg" alt="img alt">
+                <img class=" my-3" src="img/s-and-g.jpeg" alt="img alt">
                 <h3 class="card-title text-center">Simon and Garfunkel</h3>
                 <p class="text-center">Bridge over Troubled Water [800% slower]</p>
             </div>
+            <div class="col-sm-4  card">
+                <img class=" my-3" src="img/elori-saxl-tbod.webp" alt="img alt">
+                <h3 class="card-title text-center">Elori Saxl</h3>
+                <p class="text-center">The Blue of Distance</p>
+            </div>
+           
         </div>
         <div class="row">
-            <div class="round mt-3 mx-auto round-three">
+            <div class="round mx-auto round-three">
                 <span class="arrow-span"></span>
                 <span class="arrow-span"></span>
                 <span class="arrow-span"></span>
                 <span class="arrow-span"></span>
             </div>
+            
         </div>
     </div>
-
     <div class="container mt-5" id="set-timer">
-            <h2 class="mb-3">SET A TIMER</h2>
-
+        <h2 class="mb-3">SET A TIMER</h2>
+        <div class="timer-select btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+            <label class="btn btn-outline" for="vbtn-radio1">15 mins</label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+            <label class="btn btn-outline" for="vbtn-radio2">30 mins</label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline" for="vbtn-radio3">45 mins</label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio4" autocomplete="off">
+            <label class="btn btn-outline" for="vbtn-radio4">60 mins</label>
+        </div>
+        <button type="button" class="submit btn btn-outline-light">Let's Go</button>
     </div>
-
-
+    <div class="container mt-5" id="work-zone">
+<h2>YOUR TASK</h2>
+<div id="countdown">
+    <ul>
+        <li><span id="hours"></span>Hours</li>
+        <li><span id="minutes"></span>Minutes</li>
+        <li><span id="seconds"></span>Seconds</li>
+    </ul>
+</div>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EHSEG9oN38Q" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+    </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

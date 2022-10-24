@@ -5,6 +5,7 @@ html {
 body {
   background-color: #120439;
   height: 100%;
+  width: 100%;
   color: rgb(194, 192, 192);
   font-family: 'tradegothiclt-bold', sans-serif;
 }
@@ -77,38 +78,46 @@ padding-left: 8px;
     opacity: 0;
 }
 
+.card {
+        background-color: #120439;
+}
+
+.card p {
+    font-size: small;
+}
 
 /* background noise section */
 
 #background-noise {
     padding-top: 10px;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     max-width: 1100px;
-    min-width: 590px;
 }
+ h3 {
+    font-size: large;
+ }
 
 #background-noise .card {
-    background-color: #120439;
     cursor: pointer;
 }
 
-.card p, .card h3 {
+#background-noise .card img {
+    height: 200px;
+    width: 200px;
+    align-self: center;
+}
+.card {
 color: rgb(194, 192, 192);
-font-size: medium;
-
 }
 
+
 h2 {
-  font-size: 20px;
+  font-size: 1rem;
   text-align: center;
 }
 
 .selected {
-    border: solid 1px rgb(194, 192, 192);
+    background: aquamarine;
+    color: black;
 }
 
 /* set timer section */
@@ -117,12 +126,50 @@ h2 {
     padding-top: 10px;
     display: flex;
     height: 100vh;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 1100px;
-    min-width: 590px;
+}
 
+.timer-select {
+    margin-top: 50px;
+}
+
+.submit {
+    margin-top: 90px;
+    cursor: pointer;
+}
+
+/* Work zone */
+
+#work-zone {
+    padding-top: 10px;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+#countdown {
+    align-self: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* //Arrow styles // */
@@ -143,10 +190,6 @@ h2 {
     border-radius: 100%;
     margin-top: 50px;
     cursor: pointer;
-}
-
-#background-noise .round {
-
 }
 
 .arrow-span {
@@ -205,3 +248,14 @@ h2 {
 .round:hover span:nth-child(4) {
     transform: rotate(-225deg);
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 576px) {
+
+    #background-noise .card img {
+        height: auto;
+        width: 100%;
+    }
+}
+
